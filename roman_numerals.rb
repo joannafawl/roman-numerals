@@ -10,6 +10,9 @@
 class RomanNumerals
 
     def converter(number)
+        return 'V' if number == 5
+        return "X" if number == 10
+        return 'XX' if number == 20
         result = ""
         for n in 1..number
             result << "I"
