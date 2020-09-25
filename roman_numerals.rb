@@ -10,13 +10,11 @@
 class RomanNumerals
 
     def converter(number)
-        if number == 3
-            return "III"
+        result = ""
+        for n in 1..number
+            result << "I"
         end
-        if number == 2
-            return "II"
-        end
-        return "I"
+        return result
     end
     
 end
