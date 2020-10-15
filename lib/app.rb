@@ -13,5 +13,6 @@ class App
 
     def run
         @display.welcome_message
+        @display.menu
     end
 end
