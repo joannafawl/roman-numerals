@@ -22,4 +22,26 @@ describe Decoder do
             expect(described_class.new.convert("X")).to eq(10)
         end
     end
+
+    context "For more complex numerals" do
+        it "returns 17 when the input is XVII" do
+            expect(described_class.new.convert("XVII")).to eq(17)
+        end
+
+        it "returns 24 when the input is XXIV" do
+            expect(described_class.new.convert("XXIV")).to eq(24)
+        end
+
+        it "returns 76 when the input is LXXVI" do
+            expect(described_class.new.convert("LXXVI")).to eq(76)
+        end
+
+        it "returns 371 when the input is CCCLXXI" do
+            expect(described_class.new.convert("CCCLXXI")).to eq(371)
+        end
+
+        it "returns 1689 when the input is MDXXXIX" do
+            expect(described_class.new.convert("MDCLXXXIX")).to eq(1689)
+        end
+    end
 end
