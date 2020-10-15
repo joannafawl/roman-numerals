@@ -22,4 +22,13 @@ describe Display do
             expect { display.menu }.to output(menu).to_stdout
         end
     end
+
+    context "#info" do
+        it "displays some info on Roman numerals" do
+            display = Display.new
+            info_string = "According to Wikipedia, Roman numerals are a numeral system that originated in ancient Rome.\n"
+
+            expect { display.info }.to output(info_string).to_stdout
+        end
+    end
 end

@@ -14,5 +14,15 @@ class Main
     def run
         @display.welcome_message
         @display.menu
+        user_input = STDIN.gets.chomp
+        menu_choice(user_input)
+    end
+
+    private
+
+    def menu_choice(input)
+        case input
+        when "1" then @display.info
+        end
     end
 end

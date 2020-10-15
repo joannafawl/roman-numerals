@@ -12,4 +12,8 @@ class Display
         puts "\t5) Quit\n\n"
         puts "Please enter an option from 1-5."
     end
+
+    def info
+        puts "According to Wikipedia, Roman numerals are a numeral system that originated in ancient Rome."
+    end
 end
