@@ -65,4 +65,13 @@ describe Display do
             expect { display.decoder_result_message("I", 1) }.to output(message).to_stdout
         end
     end
+
+    context "#goodbye_message" do
+        it "displays a goodbye message" do
+            display = Display.new
+            message = "Thank you for using the Roman Numeral Converter! We hope you learnt something new!"
+
+            expect { display.goodbye_message }.to output(message).to_stdout
+        end
+    end
 end

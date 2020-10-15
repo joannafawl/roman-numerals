@@ -30,4 +30,8 @@ class Display
     def decoder_result_message(numeral, result)
         puts "#{numeral} converted to Roman numerals is #{result}."
     end
+
+    def goodbye_message
+        print "Thank you for using the Roman Numeral Converter! We hope you learnt something new!"
+    end
 end
