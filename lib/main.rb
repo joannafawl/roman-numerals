@@ -2,7 +2,7 @@ require_relative 'display'
 require_relative 'encoder'
 require_relative 'decoder'
 
-class App
+class Main
     attr_reader :display, :encoder, :decoder
 
     def initialize
