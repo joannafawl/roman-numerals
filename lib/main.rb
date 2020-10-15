@@ -14,7 +14,7 @@ class Main
     def run
         @display.welcome_message
         @display.menu
-        user_input = STDIN.gets.chomp
+        user_input = STDIN.gets
         menu_choice(user_input)
     end
 
@@ -23,6 +23,7 @@ class Main
     def menu_choice(input)
         case input
         when "1" then @display.info
+        when "2" then @encoder.run
         end
     end
 end

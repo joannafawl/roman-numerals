@@ -17,11 +17,9 @@ describe "RomanNumerals" do
             main = Main.new
             menu = "What would you like to do?\n\n"\
             "\t1) Learn more about Roman numerals\n"\
-            "\t2) Use the converter\n"\
-            "\t3) Practice conversion skills\n"\
-            "\t4) Take the test\n"\
-            "\t5) Quit\n\n"\
-            "Please enter an option from 1-5.\n"
+            "\t2) Convert a number to Roman numerals\n"\
+            "\t3) Convert a Roman numeral to numbers\n\n"\
+            "Please enter an option from 1-3.\n"
 
             allow(STDIN).to receive(:gets).and_return("")
             main.run
@@ -33,12 +31,24 @@ describe "RomanNumerals" do
     context "When the user asks to learn more about Roman numerals" do
         it "displays an information section" do
             main = Main.new
-            info = "According to Wikipedia, Roman numerals are a numeral system that originated in ancient Rome.\n"
+            info = "\nAccording to Wikipedia, Roman numerals are a numeral system that originated in ancient Rome.\n"
 
             allow(STDIN).to receive(:gets).and_return("1")
             main.run
 
             expect { main.run }.to output(a_string_including(info)).to_stdout
+        end
+    end
+
+    context "When the user asks to convert a number to a Roman numeral" do
+        it "displays the converted number" do
+            main = Main.new
+            result = "1 converted to Roman numerals is I."
+
+            allow(STDIN).to receive(:gets).and_return("2", 1)
+            main.run
+
+            expect { main.run }.to output(a_string_including(result)).to_stdout
         end
     end
 end

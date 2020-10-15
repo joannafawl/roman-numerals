@@ -13,11 +13,9 @@ describe Display do
             display = Display.new
             menu = "What would you like to do?\n\n"\
             "\t1) Learn more about Roman numerals\n"\
-            "\t2) Use the converter\n"\
-            "\t3) Practice conversion skills\n"\
-            "\t4) Take the test\n"\
-            "\t5) Quit\n\n"\
-            "Please enter an option from 1-5.\n"
+            "\t2) Convert a number to Roman numerals\n"\
+            "\t3) Convert a Roman numeral to numbers\n\n"\
+            "Please enter an option from 1-3.\n"
 
             expect { display.menu }.to output(menu).to_stdout
         end
@@ -26,7 +24,7 @@ describe Display do
     context "#info" do
         it "displays some info on Roman numerals" do
             display = Display.new
-            info_string = "According to Wikipedia, Roman numerals are a numeral system that originated in ancient Rome.\n"
+            info_string = "\nAccording to Wikipedia, Roman numerals are a numeral system that originated in ancient Rome.\n"
 
             expect { display.info }.to output(info_string).to_stdout
         end

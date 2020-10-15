@@ -5,15 +5,13 @@ class Display
 
     def menu
         puts "What would you like to do?\n\n"
-        puts "\t1) Learn more about Roman numerals"
-        puts "\t2) Use the converter"
-        puts "\t3) Practice conversion skills"
-        puts "\t4) Take the test"
-        puts "\t5) Quit\n\n"
-        puts "Please enter an option from 1-5."
+        puts "\t1) Learn more about Roman numerals\n"
+        puts "\t2) Convert a number to Roman numerals\n"
+        puts "\t3) Convert a Roman numeral to numbers\n\n"
+        puts "Please enter an option from 1-3.\n"
     end
 
     def info
-        puts "According to Wikipedia, Roman numerals are a numeral system that originated in ancient Rome."
+        puts "\nAccording to Wikipedia, Roman numerals are a numeral system that originated in ancient Rome."
     end
 end
