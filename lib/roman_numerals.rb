@@ -17,16 +17,12 @@ class RomanNumerals
     }
 
     def converter(number)
-        if CONVERTER.key?(number)
-            return CONVERTER[number]
-        else
-            result = ""
-            CONVERTER.each { |integer, numeral|
-                quotient, remainder = number.divmod(integer)
-                result << CONVERTER[integer] * quotient
-                number = remainder
-            }
-        end
+        result = ""
+        CONVERTER.each { |integer, numeral|
+            quotient, remainder = number.divmod(integer)
+            result << CONVERTER[integer] * quotient
+            number = remainder
+        }
         return result
     end 
 end
