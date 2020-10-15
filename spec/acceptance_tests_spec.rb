@@ -82,5 +82,25 @@ describe "RomanNumerals" do
 
             expect { main.run_decoder }.to output(a_string_including(result)).to_stdout
         end
+
+        it "displays the converted numeral" do
+            main = Main.new
+            result = "MDXLVI converted to Roman numerals is 1546."
+
+            allow(STDIN).to receive(:gets).and_return("3", "MDXLVI")
+            main.run
+
+            expect { main.run_decoder }.to output(a_string_including(result)).to_stdout
+        end
+
+        it "displays the converted numeral" do
+            main = Main.new
+            result = "DCLXVI converted to Roman numerals is 666."
+
+            allow(STDIN).to receive(:gets).and_return("3", "DCLXVI")
+            main.run
+
+            expect { main.run_decoder }.to output(a_string_including(result)).to_stdout
+        end
     end
 end
