@@ -13,5 +13,13 @@ describe Decoder do
         it "returns 3 when the input is III" do
             expect(described_class.new.convert("III")).to eq(3)
         end
+
+        it "returns 5 when the input is V" do
+            expect(described_class.new.convert("V")).to eq(5)
+        end
+
+        it "returns 10 when the input is X" do
+            expect(described_class.new.convert("X")).to eq(10)
+        end
     end
 end
