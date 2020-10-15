@@ -1,7 +1,7 @@
-require_relative '../roman_numerals'
+require_relative '../lib/roman_numerals'
 
 describe RomanNumerals do
-    context "Converter" do
+    context "When converting simple numbers" do
         it "returns I when input is the number 1" do
             expect(described_class.new.converter(1)).to eq("I")
         end
