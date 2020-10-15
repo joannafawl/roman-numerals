@@ -15,7 +15,7 @@ describe Display do
             "\t1) Learn more about Roman numerals\n"\
             "\t2) Convert a number to Roman numerals\n"\
             "\t3) Convert a Roman numeral to numbers\n\n"\
-            "Please enter an option from 1-3.\n"
+            "Please enter an option from 1-3: "
 
             expect { display.menu }.to output(menu).to_stdout
         end
@@ -33,7 +33,7 @@ describe Display do
     context "#request_number" do
         it "displays a message for user to enter a number to convert" do
             display = Display.new
-            message = "\nPlease enter a number between 1 and 3999 to convert.\n"
+            message = "\nPlease enter a number between 1 and 3999 to convert: "
 
             expect { display.request_number }.to output(message).to_stdout
         end
@@ -45,6 +45,24 @@ describe Display do
             message = "1 converted to Roman numerals is I.\n"
 
             expect { display.encoder_result_message(1, "I") }.to output(message).to_stdout
+        end
+    end
+
+    context "#request_numeral" do
+        it "displays a message for user to enter a numeral to convert" do
+            display = Display.new
+            message = "\nPlease enter a numeral to convert: "
+
+            expect { display.request_numeral }.to output(message).to_stdout
+        end
+    end
+
+    context "#decoder_result_message" do
+        it "displays the converted number" do
+            display = Display.new
+            message = "I converted to Roman numerals is 1.\n"
+
+            expect { display.decoder_result_message("I", 1) }.to output(message).to_stdout
         end
     end
 end
