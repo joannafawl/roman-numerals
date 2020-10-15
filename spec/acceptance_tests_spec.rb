@@ -51,4 +51,16 @@ describe "RomanNumerals" do
             expect { main.run_encoder }.to output(a_string_including(result)).to_stdout
         end
     end
+
+    context "When the user asks to convert a Roman numeral to a number" do
+        it "displays the converted numeral" do
+            main = Main.new
+            result = "I converted to Roman numerals is 1."
+
+            allow(STDIN).to receive(:gets).and_return("3", "I")
+            main.run
+
+            expect { main.run_decoder }.to output(a_string_including(result)).to_stdout
+        end
+    end
 end
