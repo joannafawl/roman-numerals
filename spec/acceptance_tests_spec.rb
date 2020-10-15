@@ -103,4 +103,15 @@ describe "RomanNumerals" do
             expect { main.run_decoder }.to output(a_string_including(result)).to_stdout
         end
     end
+
+    context "When the user wants to quit" do
+        it "displays a goodbye message" do
+            main = Main.new
+            message = "Thank you for using the Roman Numeral Converter! We hope you learnt something new!"
+            allow(STDIN).to receive(:gets).and_return("quit")
+            main.run
+
+            expect { main.run }.to output(a_string_including(message)).to_stdout
+        end
+    end
 end

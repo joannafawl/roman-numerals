@@ -23,6 +23,7 @@ class Main
         when "1" then @display.info
         when "2" then run_encoder
         when "3" then run_decoder
+        when "quit" then @display.goodbye_message
         end
     end
 
