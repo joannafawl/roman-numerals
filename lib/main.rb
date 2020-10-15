@@ -22,6 +22,7 @@ class Main
         case input
         when "1" then @display.info
         when "2" then run_encoder
+        when "3" then run_decoder
         end
     end
 
@@ -30,5 +31,12 @@ class Main
         user_input = STDIN.gets.to_s.chomp
         result = @encoder.convert(user_input)
         @display.encoder_result_message(user_input, result)
+    end
+
+    def run_decoder
+        @display.request_numeral
+        user_input = STDIN.gets.to_s.chomp
+        result = @decoder.convert(user_input)
+        @display.decoder_result_message(user_input, result)
     end
 end

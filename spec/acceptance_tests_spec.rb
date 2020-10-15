@@ -19,7 +19,7 @@ describe "RomanNumerals" do
             "\t1) Learn more about Roman numerals\n"\
             "\t2) Convert a number to Roman numerals\n"\
             "\t3) Convert a Roman numeral to numbers\n\n"\
-            "Please enter an option from 1-3.\n"
+            "Please enter an option from 1-3: "
 
             allow(STDIN).to receive(:gets).and_return("")
             main.run
