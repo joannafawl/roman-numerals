@@ -1,4 +1,4 @@
-class RomanNumerals
+class Decoder
 
     CONVERTER = {
         1000 => "M",
@@ -16,7 +16,7 @@ class RomanNumerals
         1 => "I"
     }
 
-    def converter(number)
+    def convert(number)
         result = ""
         CONVERTER.each { |integer, numeral|
             quotient, remainder = number.divmod(integer)
