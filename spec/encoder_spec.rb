@@ -84,4 +84,22 @@ describe Encoder do
             expect(described_class.new.convert(900)).to eq("CM")
         end        
     end
+
+    context "Random tests" do
+        it "returns DCXII when input is the number 612" do
+            expect(described_class.new.convert(612)).to eq("DCXII")
+        end
+
+        it "returns MMXX when input is the number 2020" do
+            expect(described_class.new.convert(2020)).to eq("MMXX")
+        end
+
+        it "returns CXXXVII when input is the number 137" do
+            expect(described_class.new.convert(137)).to eq("CXXXVII")
+        end
+
+        it "returns CXXXVII when input is the number 2999" do
+            expect(described_class.new.convert(2999)).to eq("MMCMXCIX")
+        end
+    end
 end
