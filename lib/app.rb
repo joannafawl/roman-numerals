@@ -10,4 +10,8 @@ class App
         @encoder = Encoder.new
         @decoder = Decoder.new
     end
+
+    def run
+        @display.welcome_message
+    end
 end

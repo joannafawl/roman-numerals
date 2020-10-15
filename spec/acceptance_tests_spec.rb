@@ -6,7 +6,7 @@ describe "RomanNumerals" do
             app = App.new
             message = "Welcome to the Roman Numeral Converter!\n"
 
-            expect { app.display.welcome_message }.to output(message).to_stdout
+            expect { app.run }.to output(a_string_including(message)).to_stdout
         end
     end
 end
