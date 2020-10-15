@@ -58,4 +58,30 @@ describe RomanNumerals do
             expect(described_class.new.converter(1000)).to eq("M")
         end
     end
+
+    context "Edge cases" do
+        it "returns IV when input is the number 4" do
+            expect(described_class.new.converter(4)).to eq("IV")
+        end
+
+        it "returns IX when input is the number 9" do
+            expect(described_class.new.converter(9)).to eq("IX")
+        end
+
+        it "returns XL when input is the number 40" do
+            expect(described_class.new.converter(40)).to eq("XL")
+        end
+
+        it "returns XC when input is the number 90" do
+            expect(described_class.new.converter(90)).to eq("XC")
+        end
+
+        it "returns CD when input is the number 400" do
+            expect(described_class.new.converter(400)).to eq("CD")
+        end
+
+        it "returns CM when input is the number 900" do
+            expect(described_class.new.converter(900)).to eq("CM")
+        end        
+    end
 end
