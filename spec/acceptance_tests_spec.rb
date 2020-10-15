@@ -50,6 +50,26 @@ describe "RomanNumerals" do
 
             expect { main.run_encoder }.to output(a_string_including(result)).to_stdout
         end
+
+        it "displays the converted number" do
+            main = Main.new
+            result = "1370 converted to Roman numerals is MCCCLXX."
+
+            allow(STDIN).to receive(:gets).and_return("2", 1370)
+            main.run
+
+            expect { main.run_encoder }.to output(a_string_including(result)).to_stdout
+        end
+
+        it "displays the converted number" do
+            main = Main.new
+            result = "493 converted to Roman numerals is CDXCIII."
+
+            allow(STDIN).to receive(:gets).and_return("2", 493)
+            main.run
+
+            expect { main.run_encoder }.to output(a_string_including(result)).to_stdout
+        end
     end
 
     context "When the user asks to convert a Roman numeral to a number" do
