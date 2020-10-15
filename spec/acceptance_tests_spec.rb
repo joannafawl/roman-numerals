@@ -48,7 +48,7 @@ describe "RomanNumerals" do
             allow(STDIN).to receive(:gets).and_return("2", 1)
             main.run
 
-            expect { main.run }.to output(a_string_including(result)).to_stdout
+            expect { main.run_encoder }.to output(a_string_including(result)).to_stdout
         end
     end
 end

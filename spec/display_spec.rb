@@ -29,4 +29,22 @@ describe Display do
             expect { display.info }.to output(info_string).to_stdout
         end
     end
+
+    context "#request_number" do
+        it "displays a message for user to enter a number to convert" do
+            display = Display.new
+            message = "\nPlease enter a number between 1 and 3999 to convert.\n"
+
+            expect { display.request_number }.to output(message).to_stdout
+        end
+    end
+
+    context "#encoder_result_message" do
+        it "displays the converted Roman numeral" do
+            display = Display.new
+            message = "1 converted to Roman numerals is I.\n"
+
+            expect { display.encoder_result_message(1, "I") }.to output(message).to_stdout
+        end
+    end
 end

@@ -14,16 +14,21 @@ class Main
     def run
         @display.welcome_message
         @display.menu
-        user_input = STDIN.gets
+        user_input = STDIN.gets.to_s.chomp
         menu_choice(user_input)
     end
-
-    private
 
     def menu_choice(input)
         case input
         when "1" then @display.info
-        when "2" then @encoder.run
+        when "2" then run_encoder
         end
+    end
+
+    def run_encoder
+        @display.request_number
+        user_input = STDIN.gets.to_s.chomp
+        result = @encoder.convert(user_input)
+        @display.encoder_result_message(user_input, result)
     end
 end
