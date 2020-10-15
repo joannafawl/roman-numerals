@@ -10,20 +10,18 @@
 class RomanNumerals
 
     CONVERTER = {
-        5 => "V",
+        20 => "XX",
         10 => "X",
-        20 => "XX"
+        6 => "VI",
+        5 => "V",
+        3 => "III",
+        2 => "II",
+        1 => "I"
     }
 
     def converter(number)
         if CONVERTER.key?(number)
             return CONVERTER[number]
-        else
-            result = ""
-            for n in 1..number
-                result << "I"
-            end
-        return result
         end
     end 
 end

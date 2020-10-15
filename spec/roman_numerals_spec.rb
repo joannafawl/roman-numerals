@@ -1,7 +1,7 @@
 require_relative '../lib/roman_numerals'
 
 describe RomanNumerals do
-    context "When converting simple numbers" do
+    context "Converter with simple numbers" do
         it "returns I when input is the number 1" do
             expect(described_class.new.converter(1)).to eq("I")
         end
@@ -15,15 +15,21 @@ describe RomanNumerals do
         end
 
         it 'returns V when input is the number 5' do
-            expect(described_class.new.converter(5)).to eq('V')
+            expect(described_class.new.converter(5)).to eq("V")
         end
 
         it 'returns X when input is the number 10' do
-            expect(described_class.new.converter(10)).to eq('X')
+            expect(described_class.new.converter(10)).to eq("X")
         end 
 
         it 'returns XX when input is the number 20' do
-            expect(described_class.new.converter(20)).to eq('XX')
+            expect(described_class.new.converter(20)).to eq("XX")
+        end
+    end
+
+    context "Converter with more complex numbers" do
+        it "returns VI when input is the number 6" do
+            expect(described_class.new.converter(6)).to eq("VI")
         end
     end
 end
