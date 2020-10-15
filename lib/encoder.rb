@@ -1,13 +1,14 @@
 require_relative 'converter'
 
-class Encoder
-    def convert(numeral)
-        if numeral == "I"
-            return 1
-        elsif numeral == "II"
-            return 2
-        else
-            return 3
-        end
-    end
+class Encoder < Converter
+
+    def convert(number)
+        result = ""
+        @@CONVERSIONS.each { |integer, numeral|
+            quotient, remainder = number.divmod(integer)
+            result << @@CONVERSIONS[integer] * quotient
+            number = remainder
+        }
+        return result
+    end 
 end
