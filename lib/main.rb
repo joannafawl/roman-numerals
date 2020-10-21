@@ -5,10 +5,10 @@ require_relative 'decoder'
 class Main
     attr_reader :display, :encoder, :decoder
 
-    def initialize
-        @display = Display.new
-        @encoder = Encoder.new
-        @decoder = Decoder.new
+    def initialize(display, encoder, decoder)
+        @display = display
+        @encoder = encoder
+        @decoder = decoder
     end
 
     def run
