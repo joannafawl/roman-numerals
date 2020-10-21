@@ -3,6 +3,8 @@
 ## About
 The Roman Numeral Converter is an app that aims to teach the user about what a Roman numeral is and also converts between Roman numerals and Arabic numerals.
 
+Clone repo and enter `ruby app.rb` in terminal to run.
+
 ## Must
 - have a welcome interface that displays a menu
 - have an encoder and decoder
