@@ -41,10 +41,9 @@ describe "RomanNumerals" do
             encoder = Encoder.new
             decoder = Decoder.new
             main = Main.new(display, encoder, decoder)
-            info = "\nAccording to Wikipedia, Roman numerals are a numeral system that originated in ancient Rome.\n"
+            info = "\nAccording to Wikipedia, Roman numerals are a numeral system that originated in ancient Rome."
 
             allow(STDIN).to receive(:gets).and_return("1")
-            main.run
 
             expect { main.run }.to output(a_string_including(info)).to_stdout
         end

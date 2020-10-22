@@ -1,4 +1,5 @@
 require_relative '../lib/display'
+require_relative '../lib/converter'
 
 describe Display do
     context "#welcome_message" do
@@ -24,9 +25,16 @@ describe Display do
     context "#info" do
         it "displays some info on Roman numerals" do
             display = Display.new
-            info_string = "\nAccording to Wikipedia, Roman numerals are a numeral system that originated in ancient Rome.\n"
+            
+            info_string = "\nAccording to Wikipedia, Roman numerals are a numeral system that originated in ancient Rome. " +
+            "They were the main way of writing numbers until the Late Middle Ages, when they were replaced by Arabic numerals.\n\n" +
+            "Numbers are represented by combinations of letters from the Latin alphabet. " +
+            "For example, 11 is written as 'XI', meaning 'ten plus one', whereas 4 is written as 'IV', meaning 'one less than five'. " +
+            "The largest number that can be written this way is 3999.\n\n" +
+            "The current year, 2020, is written 'MMXX' in Roman numerals.\n\n" +
+            "Here is a handy chart of each Roman numeral and its value:\n\n"
 
-            expect { display.info }.to output(info_string).to_stdout
+            expect { display.info }.to output(a_string_including(info_string)).to_stdout
         end
     end
 
