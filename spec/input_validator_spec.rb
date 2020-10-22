@@ -22,4 +22,12 @@ describe InputValidator do
             expect(input_validator.valid_numeral?("XP", 10)).to eq(false)
         end
     end
+
+    context "When numeral is not invalid" do
+        it "#valid_numeral? method returns true" do
+            input_validator = InputValidator.new
+
+            expect(input_validator.valid_numeral?("XX", 20)).to eq(true)
+        end
+    end
 end
