@@ -48,4 +48,8 @@ class Display
     def goodbye_message
         print "Thank you for using the Roman Numeral Converter! We hope you learnt something new!"
     end
+
+    def invalid_menu_choice_message 
+        puts "Invalid menu choice. Please enter a number from 1-5.\n"
+    end
 end

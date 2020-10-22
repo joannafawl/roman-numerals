@@ -82,4 +82,13 @@ describe Display do
             expect { display.goodbye_message }.to output(message).to_stdout
         end
     end
+
+    context "When the user enters the wrong menu choice" do
+        it "displays an invalid choice message" do
+            display = Display.new
+            message = "Invalid menu choice. Please enter a number from 1-5.\n"
+
+            expect { display.invalid_menu_choice_message }.to output(message).to_stdout
+        end
+    end
 end
