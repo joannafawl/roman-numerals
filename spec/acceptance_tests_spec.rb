@@ -28,9 +28,9 @@ describe "RomanNumerals" do
             "\t1) Learn more about Roman numerals\n"\
             "\t2) Convert a number to Roman numerals\n"\
             "\t3) Convert a Roman numeral to numbers\n\n"\
-            "Please enter an option from 1-3: "
+            "Please enter an option from 1-3, or press q to quit: "
 
-            allow(STDIN).to receive(:gets).and_return("quit")
+            allow(STDIN).to receive(:gets).and_return("q")
 
             expect { main.run }.to output(a_string_including(menu)).to_stdout
         end

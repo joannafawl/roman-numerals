@@ -10,7 +10,7 @@ class Display
         puts "\t1) Learn more about Roman numerals\n"
         puts "\t2) Convert a number to Roman numerals\n"
         puts "\t3) Convert a Roman numeral to numbers\n\n"
-        print "Please enter an option from 1-3: "
+        print "Please enter an option from 1-3, or press q to quit: "
     end
 
     def info
