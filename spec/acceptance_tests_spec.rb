@@ -137,4 +137,18 @@ describe "RomanNumerals" do
             expect { main.run }.to output(a_string_including(message)).to_stdout
         end
     end
+
+    context "When the user enters the wrong menu choice" do
+        it "displays an invalid choice message" do
+            display = Display.new
+            encoder = Encoder.new
+            decoder = Decoder.new
+            main = Main.new(display, encoder, decoder)
+            message = "Invalid menu choice. Please enter a number from 1-5.\n"
+
+            allow(STDIN).to receive(:gets).and_return("blah", "quit")
+
+            expect { main.run }.to output(a_string_including(message)).to_stdout
+        end
+    end
 end
