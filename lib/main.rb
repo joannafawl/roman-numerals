@@ -51,6 +51,10 @@ class Main
         @display.request_numeral
         user_input = STDIN.gets.to_s.chomp
         result = @decoder.convert(user_input)
-        @display.decoder_result_message(user_input, result)
+        if @input_validator.valid_numeral?(user_input, result)
+            @display.decoder_result_message(user_input, result)
+        else
+            @display.invalid_numeral_message
+        end
     end
 end
