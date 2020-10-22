@@ -180,4 +180,18 @@ describe "RomanNumerals" do
             expect { main.run }.to output(a_string_including(message)).to_stdout
         end
     end
+
+    context "When the user enters an invalid Roman numeral to convert" do
+        it "displays an error message" do
+            display = Display.new
+            encoder = Encoder.new
+            decoder = Decoder.new
+            main = Main.new(display, encoder, decoder)
+            message = "Invalid Roman numeral. Try again."
+
+            allow(STDIN).to receive(:gets).and_return("3", "PP", "quit")
+
+            expect { main.run }.to output(a_string_including(message)).to_stdout
+        end
+    end
 end
