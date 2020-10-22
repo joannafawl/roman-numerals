@@ -14,6 +14,8 @@ class Main
         menu_choice(user_input)
     end
 
+    private 
+    
     def menu_choice(input)
         case input
         when "1" then @display.info
