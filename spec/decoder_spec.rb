@@ -44,4 +44,10 @@ describe Decoder do
             expect(described_class.new.convert("MDCLXXXIX")).to eq(1689)
         end
     end
+
+    context "When the numeral is in lowercase" do
+        it "converts to uppercase before converting" do
+            expect(described_class.new.convert("xx")).to eq(20)
+        end
+    end
 end
