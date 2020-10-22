@@ -28,7 +28,7 @@ class Main
         when "1" then @display.info
         when "2" then run_encoder
         when "3" then run_decoder
-        when "quit"
+        when "quit", "q", "exit"
             @display.goodbye_message
             @running = false
         else
@@ -49,7 +49,7 @@ class Main
 
     def run_decoder
         @display.request_numeral
-        user_input = STDIN.gets.to_s.chomp
+        user_input = STDIN.gets.to_s.upcase.chomp
         result = @decoder.convert(user_input)
         if @input_validator.valid_numeral?(user_input, result)
             @display.decoder_result_message(user_input, result)
