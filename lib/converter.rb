@@ -1,5 +1,7 @@
 class Converter
 
+    attr_reader :CONVERSIONS
+
     # class variable
     @@CONVERSIONS = {
         1000 => "M",
