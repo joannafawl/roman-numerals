@@ -5,15 +5,17 @@ class Main
         @display = display
         @encoder = encoder
         @decoder = decoder
+        @running = false
     end
 
     def run
-        running = true
-        #until !running
-            @display.welcome_message
+        @running = true
+        @display.welcome_message
+        until @running == false
             @display.menu
             user_input = STDIN.gets.to_s.chomp
             menu_choice(user_input)
+        end
     end
 
     private 
@@ -25,7 +27,7 @@ class Main
         when "3" then run_decoder
         when "quit"
             @display.goodbye_message
-            #running = false
+            @running = false
         else
             @display.invalid_menu_choice_message
         end
