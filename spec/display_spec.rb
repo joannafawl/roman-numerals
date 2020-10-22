@@ -100,4 +100,13 @@ describe Display do
             expect { display.invalid_number_message }.to output(message).to_stdout
         end
     end
+
+    context "When the user enters an invalid Roman numeral to convert" do
+        it "displays an invalid number message" do
+            display = Display.new
+            message = "Invalid Roman numeral. Try again.\n"
+
+            expect { display.invalid_numeral_message }.to output(message).to_stdout
+        end
+    end
 end

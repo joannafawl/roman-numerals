@@ -56,4 +56,8 @@ class Display
     def invalid_number_message
         puts "Please ensure number is between 1 and 3999.\n"
     end
+
+    def invalid_numeral_message
+        puts "Invalid Roman numeral. Try again.\n"
+    end
 end
