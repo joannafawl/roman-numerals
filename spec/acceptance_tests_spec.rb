@@ -58,9 +58,8 @@ describe "RomanNumerals" do
             result = "1 converted to Roman numerals is I."
 
             allow(STDIN).to receive(:gets).and_return("2", 1)
-            main.run
 
-            expect { main.run_encoder }.to output(a_string_including(result)).to_stdout
+            expect { main.run }.to output(a_string_including(result)).to_stdout
         end
 
         it "displays the converted number" do
@@ -71,9 +70,8 @@ describe "RomanNumerals" do
             result = "1370 converted to Roman numerals is MCCCLXX."
 
             allow(STDIN).to receive(:gets).and_return("2", 1370)
-            main.run
 
-            expect { main.run_encoder }.to output(a_string_including(result)).to_stdout
+            expect { main.run }.to output(a_string_including(result)).to_stdout
         end
 
         it "displays the converted number" do
@@ -84,9 +82,8 @@ describe "RomanNumerals" do
             result = "493 converted to Roman numerals is CDXCIII."
 
             allow(STDIN).to receive(:gets).and_return("2", 493)
-            main.run
 
-            expect { main.run_encoder }.to output(a_string_including(result)).to_stdout
+            expect { main.run }.to output(a_string_including(result)).to_stdout
         end
     end
 
@@ -99,9 +96,8 @@ describe "RomanNumerals" do
             result = "I converted to Roman numerals is 1."
 
             allow(STDIN).to receive(:gets).and_return("3", "I")
-            main.run
 
-            expect { main.run_decoder }.to output(a_string_including(result)).to_stdout
+            expect { main.run }.to output(a_string_including(result)).to_stdout
         end
 
         it "displays the converted numeral" do
@@ -112,9 +108,8 @@ describe "RomanNumerals" do
             result = "MDXLVI converted to Roman numerals is 1546."
 
             allow(STDIN).to receive(:gets).and_return("3", "MDXLVI")
-            main.run
 
-            expect { main.run_decoder }.to output(a_string_including(result)).to_stdout
+            expect { main.run }.to output(a_string_including(result)).to_stdout
         end
 
         it "displays the converted numeral" do
@@ -125,9 +120,8 @@ describe "RomanNumerals" do
             result = "DCLXVI converted to Roman numerals is 666."
 
             allow(STDIN).to receive(:gets).and_return("3", "DCLXVI")
-            main.run
 
-            expect { main.run_decoder }.to output(a_string_including(result)).to_stdout
+            expect { main.run }.to output(a_string_including(result)).to_stdout
         end
     end
 
@@ -139,7 +133,6 @@ describe "RomanNumerals" do
             main = Main.new(display, encoder, decoder)
             message = "Thank you for using the Roman Numeral Converter! We hope you learnt something new!"
             allow(STDIN).to receive(:gets).and_return("quit")
-            main.run
 
             expect { main.run }.to output(a_string_including(message)).to_stdout
         end
