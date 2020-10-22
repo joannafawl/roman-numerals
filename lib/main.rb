@@ -1,3 +1,5 @@
+require_relative 'input_validator'
+
 class Main
     attr_reader :display, :encoder, :decoder
 
@@ -5,6 +7,7 @@ class Main
         @display = display
         @encoder = encoder
         @decoder = decoder
+        @input_validator = InputValidator.new
         @running = false
     end
 
@@ -36,8 +39,12 @@ class Main
     def run_encoder
         @display.request_number
         user_input = STDIN.gets.to_s.chomp
-        result = @encoder.convert(user_input)
-        @display.encoder_result_message(user_input, result)
+        if @input_validator.valid_number?(user_input)
+            result = @encoder.convert(user_input)
+            @display.encoder_result_message(user_input, result)
+        else
+            @display.invalid_number_message
+        end
     end
 
     def run_decoder

@@ -166,4 +166,18 @@ describe "RomanNumerals" do
             expect { main.run }.to output(a_string_including(result)).to_stdout
         end
     end
+
+    context "When the user enters a number to convert that is too big" do
+        it "displays an error message" do
+            display = Display.new
+            encoder = Encoder.new
+            decoder = Decoder.new
+            main = Main.new(display, encoder, decoder)
+            message = "Please ensure number is between 1 and 3999."
+
+            allow(STDIN).to receive(:gets).and_return("2", "4000", "quit")
+
+            expect { main.run }.to output(a_string_including(message)).to_stdout
+        end
+    end
 end
