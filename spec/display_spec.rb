@@ -12,7 +12,7 @@ describe Display do
     context "#menu" do
         it "displays a menu" do
             display = Display.new
-            menu = "What would you like to do?\n\n"\
+            menu = "\nWhat would you like to do?\n\n"\
             "\t1) Learn more about Roman numerals\n"\
             "\t2) Convert a number to Roman numerals\n"\
             "\t3) Convert a Roman numeral to numbers\n\n"\
@@ -86,9 +86,18 @@ describe Display do
     context "When the user enters the wrong menu choice" do
         it "displays an invalid choice message" do
             display = Display.new
-            message = "Invalid menu choice. Please enter a number from 1-5.\n"
+            message = "Invalid menu choice. Please enter a number from 1-5.\n\n"
 
             expect { display.invalid_menu_choice_message }.to output(message).to_stdout
+        end
+    end
+
+    context "When the user enters a number to convert that is too big" do
+        it "displays an invalid number message" do
+            display = Display.new
+            message = "Please ensure number is between 1 and 3999.\n"
+
+            expect { display.invalid_number_message }.to output(message).to_stdout
         end
     end
 end

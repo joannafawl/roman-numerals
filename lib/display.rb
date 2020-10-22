@@ -6,7 +6,7 @@ class Display
     end
 
     def menu
-        puts "What would you like to do?\n\n"
+        puts "\nWhat would you like to do?\n\n"
         puts "\t1) Learn more about Roman numerals\n"
         puts "\t2) Convert a number to Roman numerals\n"
         puts "\t3) Convert a Roman numeral to numbers\n\n"
@@ -50,6 +50,10 @@ class Display
     end
 
     def invalid_menu_choice_message 
-        puts "Invalid menu choice. Please enter a number from 1-5.\n"
+        puts "Invalid menu choice. Please enter a number from 1-5.\n\n"
+    end
+
+    def invalid_number_message
+        puts "Please ensure number is between 1 and 3999.\n"
     end
 end
