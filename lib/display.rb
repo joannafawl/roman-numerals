@@ -26,7 +26,6 @@ class Display
         Converter.class_variable_get(:@@CONVERSIONS).each { |key, value|
             puts "\t#{value}: #{key}"
         } 
-        #puts "\nAccording to Wikipedia, Roman numerals are a numeral system that originated in ancient Rome."
     end
 
     def request_number
