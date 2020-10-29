@@ -28,11 +28,11 @@ describe Encoder do
             expect(described_class.new.convert(6)).to eq("VI")
         end
 
-        it "returns VI when input is the number 6" do
+        it "returns VII when input is the number 7" do
             expect(described_class.new.convert(7)).to eq("VII")
         end
 
-        it "returns VI when input is the number 6" do
+        it "returns XVII when input is the number 17" do
             expect(described_class.new.convert(17)).to eq("XVII")
         end
     end
